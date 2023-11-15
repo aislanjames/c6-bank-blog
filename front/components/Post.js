@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardActions, CardMedia, Button, Typography } from '@mui/material';
+import { API_URL } from '../pages/api/apiConfig'
 
 const Post = ({ post, hasCategories }) => {
   const [categoryName, setCategoryName] = useState('');
@@ -7,7 +8,7 @@ const Post = ({ post, hasCategories }) => {
 
   const fetchCategory = async (categoryId) => {
     try {
-      const response = await fetch(`http://wp-api.local/wp-json/wp/v2/categories/${categoryId}`);
+      const response = await fetch(`${API_URL}/categories/${categoryId}`);
       const data = await response.json();
       setCategoryName(data.name);
     } catch (error) {
@@ -18,7 +19,7 @@ const Post = ({ post, hasCategories }) => {
 
   const fetchFeaturedImage = async (mediaId) => {
     try {
-      const response = await fetch(`http://wp-api.local/wp-json/wp/v2/media/${mediaId}`);
+      const response = await fetch(`${API_URL}/media/${mediaId}`);
       const data = await response.json();
       setFeaturedImage(data.source_url);
     } catch (error) {

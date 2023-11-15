@@ -6,7 +6,7 @@ const PostGrid = ({ posts }) => {
   return (
     <section>
       <Typography variant="h4" component="h3">
-        Destaques
+        Destaque
       </Typography>
       <Grid container spacing={2}>
         {posts.map(post => (
