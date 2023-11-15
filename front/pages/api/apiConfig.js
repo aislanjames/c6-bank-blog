@@ -1,0 +1,1 @@
+export const API_URL = 'http://wp-api.local/wp-json/wp/v2';
